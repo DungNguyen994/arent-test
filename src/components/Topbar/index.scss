@@ -1,0 +1,18 @@
+.menu-list {
+  svg {
+    color: #ff963c;
+  }
+  img {
+    font-size: 16px;
+  }
+}
+.menu-item-container:hover,
+.selected {
+  background-color: whitesmoke;
+  transition: all 1s ease;
+  color: black;
+  svg,
+  span {
+    color: black;
+  }
+}
