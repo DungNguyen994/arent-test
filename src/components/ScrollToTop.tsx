@@ -26,7 +26,7 @@ export default function ScrollToTop() {
       sx={{
         position: "fixed",
         top: "50%",
-        right: "50px",
+        right: { xs: "5px", lg: "50px" },
         cursor: "pointer",
       }}
       onClick={goToTop}
