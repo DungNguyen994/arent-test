@@ -3,12 +3,13 @@ import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
+import DrawerSideBar from "./DrawerSideBar";
 import MenuList from "./MenuList";
-import MobileSideBar from "./MobileSideBar";
 import "./index.scss";
 
 export default function Topbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   let workItem: string;
   switch (location.pathname) {
     case ROUTES.HOME:
@@ -25,47 +26,43 @@ export default function Topbar() {
   }
 
   useEffect(() => {
-    document.title = workItem + "-Health App";
+    document.title = workItem + "-Healthy";
   }, [workItem]);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const mobileMenuId = "primary-search-account-menu-mobile";
 
-  const navigate = useNavigate();
+  const [openDrawer, setOpenDrawer] = useState(false);
 
-  const closeSidebar = () => setIsMobileMenuOpen(false);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const closeSidebar = () => setOpenDrawer(false);
 
   return (
     <AppBar
       position="fixed"
       style={{ background: "#414141" }}
-      sx={{ maxHeight: "64px", padding: { md: "0 10%" } }}
+      sx={{ maxHeight: "64px", padding: { md: "0 15%" } }}
       className="menu-list"
     >
       <Toolbar>
-        <Box component="img" src="/logo.png" alt="App Logo" />
+        <Box
+          component="img"
+          src="/Imagine/logo.png"
+          alt="App Logo"
+          sx={{ cursor: "pointer" }}
+          onClick={() => navigate(ROUTES.HOME)}
+        />
         <Box sx={{ flexGrow: 1 }} />
         <MenuList />
         <Box sx={{ flexGrow: 0.2 }} />
         <Box>
           <IconButton
             aria-label="show more"
-            aria-controls={mobileMenuId}
             aria-haspopup="true"
-            onClick={() => setIsMobileMenuOpen((pre) => !pre)}
+            onClick={() => setOpenDrawer((pre) => !pre)}
             color="inherit"
           >
             <MenuIcon sx={{ fontSize: "30px" }} />
           </IconButton>
         </Box>
       </Toolbar>
-      <MobileSideBar open={isMobileMenuOpen} closeSidebar={closeSidebar} />
+      <DrawerSideBar open={openDrawer} closeSidebar={closeSidebar} />
     </AppBar>
   );
 }

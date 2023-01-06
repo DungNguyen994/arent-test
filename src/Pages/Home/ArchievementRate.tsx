@@ -7,14 +7,14 @@ export default function ArchievementRate() {
   return (
     <Box
       sx={{
-        backgroundImage: 'url("d01.jpg")',
+        backgroundImage: 'url("Imagine/main_photo.png")',
         position: "relative",
         height: "312px",
       }}
     >
       <Box
         component="img"
-        src="/circle-icon.png"
+        src="Imagine/circle-icon.png"
         sx={{
           position: "absolute",
           left: "50%",

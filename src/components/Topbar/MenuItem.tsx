@@ -5,14 +5,16 @@ import {
   ListItemText,
   Badge,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   label: string;
-  iconSrc: string;
-  onClick: () => void;
+  iconSrc?: string;
   hasBadge?: boolean;
+  path?: string;
 }
-export default function MenuItem({ label, iconSrc, onClick, hasBadge }: Props) {
+export default function MenuItem({ label, iconSrc, hasBadge, path }: Props) {
+  const navigate = useNavigate();
   const text = (
     <ListItemText
       primary={label}
@@ -23,6 +25,9 @@ export default function MenuItem({ label, iconSrc, onClick, hasBadge }: Props) {
       }}
     />
   );
+  const onClick = () => {
+    if (path) navigate(path);
+  };
   return (
     <Box className="menu-item-container" sx={{ minWidth: "150px" }}>
       <ListItemButton onClick={onClick} style={{ background: "transparent" }}>

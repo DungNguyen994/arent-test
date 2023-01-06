@@ -6,6 +6,7 @@ import { ROUTES } from "./routes";
 import RequiredAuth from "./components/RequiredAuth";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login";
+import MyRecord from "./Pages/MyRecord/MyRecord";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route element={<RequiredAuth />}>
           <Route path="/" element={<Layout />}>
             <Route path={ROUTES.HOME} element={<Home />} />
+            <Route path={ROUTES.MYRECORD} element={<MyRecord />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
