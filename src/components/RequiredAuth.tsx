@@ -1,9 +1,9 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 export default function RequiredAuth() {
-  const isLoggedIn = true;
   const location = useLocation();
-  return isLoggedIn ? (
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
+  return isAuthenticated ? (
     <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />

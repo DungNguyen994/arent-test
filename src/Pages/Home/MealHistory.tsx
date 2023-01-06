@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import MealItem from "./MealItem";
+import MealItem from "../../components/CardItem";
 
 export default function MealHistory() {
   const MealImageList = [

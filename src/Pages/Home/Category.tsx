@@ -22,8 +22,8 @@ export default function Category() {
 
   return (
     <Stack justifyContent="space-evenly" direction="row">
-      {sources.map((src) => (
-        <CategoryItem src={src} />
+      {sources.map((src, index) => (
+        <CategoryItem src={src} key={index} />
       ))}
     </Stack>
   );

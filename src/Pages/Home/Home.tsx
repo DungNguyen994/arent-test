@@ -3,10 +3,10 @@ import ArchievementRate from "./ArchievementRate";
 import { BodyGraph } from "./BodyGraph";
 import Category from "./Category";
 import MealHistory from "./MealHistory";
-import Footer from "../../components/Footer";
+
 export default function Home() {
   return (
-    <Grid container sx={{ height: "312px" }}>
+    <Grid container mb={5}>
       <Grid item xs={12} md={4}>
         <ArchievementRate />
       </Grid>
@@ -35,13 +35,12 @@ export default function Home() {
             p: "4px 30px",
             margin: "8px auto",
             display: "block",
+            height: "56px",
+            width: "310px",
           }}
         >
           記録をもっと見る
         </Button>
-      </Grid>
-      <Grid item xs={12} mt={2}>
-        <Footer />
       </Grid>
     </Grid>
   );

@@ -1,19 +1,23 @@
 import { Box, Stack, Typography } from "@mui/material";
-import React from "react";
+import { NavPath } from "./MyRecord";
 
 interface ItemProps {
   bgImg: string;
   headerText: string;
   btnText: string;
+  path: NavPath;
+  onNavClick: (path: NavPath) => void;
 }
-const Item = ({ bgImg, headerText, btnText }: ItemProps) => (
+const Item = ({ bgImg, headerText, btnText, path, onNavClick }: ItemProps) => (
   <Box
     sx={{
       height: "288px",
       width: "288px",
       background: "#FFCC21",
       position: "relative",
+      cursor: "pointer",
     }}
+    onClick={() => onNavClick(path)}
   >
     <Box
       sx={{
@@ -68,28 +72,40 @@ const Item = ({ bgImg, headerText, btnText }: ItemProps) => (
   </Box>
 );
 
-export default function Navigation() {
+interface Props {
+  onNavClick: (path: NavPath) => void;
+}
+
+export default function Navigation({ onNavClick }: Props) {
   const itemList = [
     {
       bgImg: "/Imagine/MyRecommend-1.jpg",
       headerText: "Body Record",
       btnText: "自分のカラダの記録",
+      path: "body" as NavPath,
     },
     {
       bgImg: "/Imagine/MyRecommend-2.jpg",
       headerText: "My exercise",
       btnText: "自分の運動の記録",
+      path: "exercise" as NavPath,
     },
     {
       bgImg: "/Imagine/MyRecommend-3.jpg",
       headerText: "my diary",
       btnText: "自分の日記",
+      path: "diary" as NavPath,
     },
   ];
   return (
-    <Stack direction="row" spacing={30}>
+    <Stack
+      direction={{ xs: "column", md: "row" }}
+      spacing={{ xs: 2, lg: 30 }}
+      alignItems="center"
+      justifyContent="space-evenly"
+    >
       {itemList.map((item, index) => (
-        <Item {...item} key={index} />
+        <Item {...item} key={index} onNavClick={onNavClick} />
       ))}
     </Stack>
   );

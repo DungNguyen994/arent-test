@@ -1,19 +1,28 @@
-import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import dayjs from "dayjs";
+import exercises from "./exercises-mock.json";
 interface ItemProps {
   name: string;
   kcal: number;
   time: number;
 }
 const Item = ({ name, kcal, time }: ItemProps) => (
-  <Stack direction="row" justifyContent="space-between">
-    <Stack>
+  <Stack
+    direction="row"
+    justifyContent="space-between"
+    sx={{
+      borderBottom: "1px solid #777777",
+      mr: "50px",
+    }}
+  >
+    <Stack spacing={1}>
       <Typography
         sx={{
           fontSize: "15px",
           lineHeight: "22px",
           color: "white",
         }}
+        component="li"
       >
         {name}
       </Typography>
@@ -41,46 +50,9 @@ const Item = ({ name, kcal, time }: ItemProps) => (
 );
 
 export default function MyExercise() {
-  const exercises = [
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-    {
-      name: "家事全般（立位・軽い）",
-      kcal: 26,
-      time: 10,
-    },
-  ];
   const today = dayjs().format("YYYY.MM.DD");
   return (
-    <Box sx={{ background: "#414141" }} p={3} height="264px">
+    <Box sx={{ background: "#414141" }} p={3}>
       <Stack direction="row" mb={2}>
         <Typography
           sx={{
@@ -104,11 +76,19 @@ export default function MyExercise() {
           {today}
         </Typography>
       </Stack>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        height="230px"
+        sx={{
+          overflow: "auto",
+          mr: "40px",
+        }}
+        className="custom-scrollbar"
+        component="ul"
+      >
         {exercises.map((e, index) => (
           <Grid item xs={6} key={index}>
             <Item {...e} />
-            <hr className="divider" />
           </Grid>
         ))}
       </Grid>

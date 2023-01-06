@@ -1,12 +1,12 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
-import NotFound from "./Pages/NotFound";
-import { ROUTES } from "./routes";
-import RequiredAuth from "./components/RequiredAuth";
+import Column from "./Pages/Column/Column";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login";
 import MyRecord from "./Pages/MyRecord/MyRecord";
+import NotFound from "./Pages/NotFound";
+import Layout from "./components/Layout";
+import RequiredAuth from "./components/RequiredAuth";
+import { ROUTES } from "./routes";
 
 function App() {
   return (
@@ -14,9 +14,12 @@ function App() {
       <Routes>
         {/*public routes */}
         <Route path="/login" element={<Login />} />
-        {/*protected routes */}
-        <Route element={<RequiredAuth />}>
-          <Route path="/" element={<Layout />}>
+
+        {/*layout routes */}
+        <Route path="/" element={<Layout />}>
+          <Route path={ROUTES.COLUMN} element={<Column />} />
+          {/*protected routes */}
+          <Route element={<RequiredAuth />}>
             <Route path={ROUTES.HOME} element={<Home />} />
             <Route path={ROUTES.MYRECORD} element={<MyRecord />} />
           </Route>
