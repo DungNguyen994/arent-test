@@ -2,7 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## To install dependencies
+
+In the project directory, you can run:
+
+### `npm install`
+
+## To start the applicated
 
 In the project directory, you can run:
 
@@ -14,11 +20,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,15 +30,32 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Login
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note: this is a temporary login, you can log in with any username/password. Later on you can integrate with api auth-service!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After login you will be directed to home page (top myPage). This persists the login session in the brower by the value isAuthenticated stored in localStorage.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The second button on the login page will direct you to the Column page which does not require authentication.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### UI library
+
+Material UI helps to build the website quicker and supports responsive design
+
+You can learn more in the [Material UI documentation](https://mui.com/).
+
+### Components
+
+ProcessCircle component gives you the solution for archievement rate based on the completion percentage.You can also change the colour. Example: <ProcessCicle percentage={50} colour='red"/>
+
+For graphs and charts, react-chartjs-2 is used.
+You can learn more in the [react-chartjs-2 documentation](https://react-chartjs-2.js.org/).
+
+The second button on the login page will direct you to the Column page which does not require authentication.
+
+## CI/CD
+
+The source code includes Jenkinsfile to support CI if you choose Jenkins as a CI tool. It also includes Dockerfile to help you build docker image of the app
 
 ## Learn More
 

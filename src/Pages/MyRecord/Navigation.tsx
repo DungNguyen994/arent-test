@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { NavPath } from "./MyRecord";
+import { navList } from "../../contanst";
 
 interface ItemProps {
   bgImg: string;
@@ -21,8 +22,7 @@ const Item = ({ bgImg, headerText, btnText, path, onNavClick }: ItemProps) => (
   >
     <Box
       sx={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundSize: "cover",
+        background: "grey",
         position: "absolute",
         height: "80%",
         width: "80%",
@@ -30,45 +30,55 @@ const Item = ({ bgImg, headerText, btnText, path, onNavClick }: ItemProps) => (
         left: "10%",
       }}
     >
-      <Stack
+      <Box
         sx={{
-          position: "absolute",
-          left: "50%",
-          top: "40%",
+          backgroundImage: `url(${bgImg})`,
+          backgroundSize: "cover",
+          height: "100%",
           width: "100%",
-          transform: "translate(-50%, 0)",
-          justifyContent: "center",
+          mixBlendMode: "luminosity",
+          opacity: 0.25,
+        }}
+      />
+    </Box>
+    <Stack
+      sx={{
+        position: "absolute",
+        left: "50%",
+        top: "40%",
+        width: "100%",
+        transform: "translate(-50%, 0)",
+        justifyContent: "center",
+      }}
+    >
+      <Typography
+        sx={{
+          fontWeight: "400",
+          fontSize: "25px",
+          lineHeight: "30px",
+          color: "#FFCC21",
+          textAlign: "center",
+          textTransform: "uppercase",
+          marginBottom: "15px",
         }}
       >
-        <Typography
-          sx={{
-            fontWeight: "400",
-            fontSize: "25px",
-            lineHeight: "30px",
-            color: "#FFCC21",
-            textAlign: "center",
-            textTransform: "uppercase",
-            marginBottom: "15px",
-          }}
-        >
-          {headerText}
-        </Typography>
-        <Box
-          sx={{
-            cursor: "pointer",
-            background: "#FF963C",
-            padding: "1px 0px",
-            textAlign: "center",
-            color: "white",
-            width: "70%",
-            margin: "0 auto",
-            fontSize: "14px",
-          }}
-        >
-          {btnText}
-        </Box>
-      </Stack>
-    </Box>
+        {headerText}
+      </Typography>
+      <Box
+        sx={{
+          cursor: "pointer",
+          background: "#FF963C",
+          padding: "1px 0px",
+          textAlign: "center",
+          color: "white",
+          width: "70%",
+          margin: "0 auto",
+          fontSize: "14px",
+        }}
+      >
+        {btnText}
+      </Box>
+    </Stack>
   </Box>
 );
 
@@ -77,26 +87,6 @@ interface Props {
 }
 
 export default function Navigation({ onNavClick }: Props) {
-  const itemList = [
-    {
-      bgImg: "/Imagine/MyRecommend-1.jpg",
-      headerText: "Body Record",
-      btnText: "自分のカラダの記録",
-      path: "body" as NavPath,
-    },
-    {
-      bgImg: "/Imagine/MyRecommend-2.jpg",
-      headerText: "My exercise",
-      btnText: "自分の運動の記録",
-      path: "exercise" as NavPath,
-    },
-    {
-      bgImg: "/Imagine/MyRecommend-3.jpg",
-      headerText: "my diary",
-      btnText: "自分の日記",
-      path: "diary" as NavPath,
-    },
-  ];
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
@@ -104,7 +94,7 @@ export default function Navigation({ onNavClick }: Props) {
       alignItems="center"
       justifyContent="space-evenly"
     >
-      {itemList.map((item, index) => (
+      {navList.map((item, index) => (
         <Item {...item} key={index} onNavClick={onNavClick} />
       ))}
     </Stack>

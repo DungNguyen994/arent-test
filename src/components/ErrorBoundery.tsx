@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <section className="page_error">
+        <section className="page_404">
           <div className="container">
             <div className="row">
               <div className="col-sm-12 ">

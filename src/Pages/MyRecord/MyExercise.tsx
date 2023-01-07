@@ -1,5 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import dayjs from "dayjs";
+import { TODAY } from "../../contanst";
 import exercises from "./exercises-mock.json";
 interface ItemProps {
   name: string;
@@ -50,31 +50,11 @@ const Item = ({ name, kcal, time }: ItemProps) => (
 );
 
 export default function MyExercise() {
-  const today = dayjs().format("YYYY.MM.DD");
   return (
     <Box sx={{ background: "#414141" }} p={3}>
       <Stack direction="row" mb={2}>
-        <Typography
-          sx={{
-            fontSize: "15px",
-            fontWeight: "400",
-            lineHeight: "18px",
-            color: "white",
-            width: "96px",
-          }}
-        >
-          MY EXERCISE
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: "22px",
-            fontWeight: "400",
-            lineHeight: "27px",
-            color: "white",
-          }}
-        >
-          {today}
-        </Typography>
+        <Typography className="section-header">MY EXERCISE</Typography>
+        <Typography className="date-header">{TODAY}</Typography>
       </Stack>
       <Grid
         container

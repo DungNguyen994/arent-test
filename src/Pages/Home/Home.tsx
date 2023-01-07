@@ -27,20 +27,15 @@ export default function Home() {
       <Grid item xs={12} mt={2} p="6px 15%">
         <MealHistory />
       </Grid>
-      <Grid item xs={12} mt={2} p="6px 15%">
-        <Button
-          sx={{
-            background:
-              "linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)",
-            p: "4px 30px",
-            margin: "8px auto",
-            display: "block",
-            height: "56px",
-            width: "310px",
-          }}
-        >
-          記録をもっと見る
-        </Button>
+      <Grid
+        item
+        xs={12}
+        mt={2}
+        p="6px 15%"
+        display="flex"
+        justifyContent="center"
+      >
+        <Button className="btn-main">記録をもっと見る</Button>
       </Grid>
     </Grid>
   );

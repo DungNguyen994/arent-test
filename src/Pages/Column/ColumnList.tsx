@@ -1,57 +1,8 @@
 import { Grid } from "@mui/material";
 import CardItem from "../../components/CardItem";
+import columnList from "./column-list.json";
 
 export default function ColumnList() {
-  const columnList = [
-    {
-      bgImg: "Imagine/column-1.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-2.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-3.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-4.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-5.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-6.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-7.jpg",
-      text: "2021.05.17   23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-    {
-      bgImg: "Imagine/column-8.jpg",
-      text: "2021.05.17    23:25",
-      content: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
-      footer: "#魚料理  #和食  #DHA",
-    },
-  ];
   return (
     <Grid container>
       {columnList.map((column, index) => (

@@ -15,14 +15,14 @@ export default function Topbar() {
     case ROUTES.HOME:
       workItem = "Home";
       break;
+    case ROUTES.MYRECORD:
+      workItem = "My Record";
+      break;
+    case ROUTES.COLUMN:
+      workItem = "Column";
+      break;
     default:
       workItem = "Home";
-  }
-  if (location.pathname.includes("/edit-member")) {
-    workItem = "Edit Member";
-  }
-  if (location.pathname.includes("/edit-product")) {
-    workItem = "Edit Product";
   }
 
   useEffect(() => {

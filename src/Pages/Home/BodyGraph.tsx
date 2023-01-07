@@ -80,13 +80,8 @@ export function BodyGraph() {
   };
 
   return (
-    <Box height="312px" width="100%">
-      <Line
-        options={options}
-        data={data}
-        redraw
-        style={{ background: "#2E2E2E", width: "100%" }}
-      />
+    <Box height="312px">
+      <Line options={options} data={data} redraw className="my-record-bg" />
     </Box>
   );
 }

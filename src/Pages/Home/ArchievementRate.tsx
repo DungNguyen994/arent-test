@@ -1,6 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import dayjs from "dayjs";
+import { ProcessCircle } from "../../components/ProgressCircle";
 
 export default function ArchievementRate() {
   const today = dayjs().format("MM/DD");
@@ -13,15 +14,15 @@ export default function ArchievementRate() {
       }}
     >
       <Box
-        component="img"
-        src="Imagine/circle-icon.png"
         sx={{
           position: "absolute",
-          left: "50%",
-          top: "20%",
+          left: "48%",
+          top: "15%",
           transform: "translate(-50%, 0)",
         }}
-      />
+      >
+        <Box component={ProcessCircle} colour="white" percentage={75} />
+      </Box>
       <Stack
         direction="row"
         sx={{

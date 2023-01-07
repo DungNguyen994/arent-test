@@ -1,4 +1,5 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
+import { recommendItems } from "../../contanst";
 
 interface ItemProps {
   header: string;
@@ -45,15 +46,9 @@ const RecommendItem = ({ header, text }: ItemProps) => (
 );
 
 export default function RecommendSection() {
-  const items = [
-    { header: "RECOMMENDED COLUMN", text: "オススメ" },
-    { header: "RECOMMENDED DIET", text: "オススメ" },
-    { header: "RECOMMENDED BEAUTY", text: "オススメ" },
-    { header: "RECOMMENDED HEALTH", text: "オススメ" },
-  ];
   return (
     <Grid container justifyContent="center" spacing={{ xs: 2 }}>
-      {items.map((item, index) => (
+      {recommendItems.map((item, index) => (
         <Grid item xs={5} lg={3}>
           <RecommendItem {...item} key={index} />
         </Grid>

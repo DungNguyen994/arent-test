@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 import { BrowserRouter } from "react-router-dom";
-import ErrorBoundary from "./components/ErrorBoundery/ErrorBoundery";
+import ErrorBoundary from "./components/ErrorBoundery";
 
 const root = document.getElementById("root") as HTMLElement;
 if (process.env.NODE_ENV === "production") {

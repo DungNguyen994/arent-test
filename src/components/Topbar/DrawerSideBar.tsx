@@ -1,17 +1,8 @@
 import { Close } from "@mui/icons-material";
 import { Box, Drawer, IconButton, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../routes";
 import "./index.scss";
-
-const MenuItemList = [
-  { label: "自分の記録", path: ROUTES.MYRECORD },
-  { label: "体重グラフ" },
-  { label: "目標" },
-  { label: "選択中のコース" },
-  { label: "コラム一覧", path: ROUTES.COLUMN },
-  { label: "設定" },
-];
+import { MenuItemList } from "../../contanst";
 
 interface MenuItemProps {
   label: string;

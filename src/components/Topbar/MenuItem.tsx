@@ -32,15 +32,15 @@ export default function MenuItem({ label, iconSrc, hasBadge, path }: Props) {
     <Box className="menu-item-container" sx={{ minWidth: "150px" }}>
       <ListItemButton onClick={onClick} style={{ background: "transparent" }}>
         <ListItemIcon sx={{ minWidth: "45px" }}>
-          <Box component="img" src={iconSrc}></Box>
+          {hasBadge ? (
+            <Badge badgeContent={1} color="warning">
+              <Box component="img" src={iconSrc}></Box>
+            </Badge>
+          ) : (
+            <Box component="img" src={iconSrc}></Box>
+          )}
         </ListItemIcon>
-        {hasBadge ? (
-          <Badge badgeContent={1} color="warning">
-            {text}
-          </Badge>
-        ) : (
-          text
-        )}
+        {text}
       </ListItemButton>
     </Box>
   );

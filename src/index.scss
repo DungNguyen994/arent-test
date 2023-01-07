@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: "Hiragino Kaku Gothic Pro", "Inter";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,4 +56,29 @@ code {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px #777777;
   background-color: #ffcc21;
+}
+
+.btn-main {
+  background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
+  padding: 4px 30px;
+  margin: 8px auto;
+  display: block;
+  height: 56px;
+  width: 310px;
+}
+.section-header {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: white;
+  width: 96px;
+}
+.date-header {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  color: white;
+}
+.my-record-bg {
+  background: #2e2e2e;
 }

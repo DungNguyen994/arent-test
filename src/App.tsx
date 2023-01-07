@@ -14,7 +14,6 @@ function App() {
       <Routes>
         {/*public routes */}
         <Route path="/login" element={<Login />} />
-
         {/*layout routes */}
         <Route path="/" element={<Layout />}>
           <Route path={ROUTES.COLUMN} element={<Column />} />

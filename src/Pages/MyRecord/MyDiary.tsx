@@ -46,19 +46,7 @@ export default function MyDiary() {
           <DiaryBox key={index} />
         ))}
         <Grid item xs={12} mt={2} justifyContent="center" display="flex">
-          <Button
-            sx={{
-              background:
-                "linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)",
-              p: "4px 30px",
-              margin: "8px auto",
-              display: "block",
-              height: "56px",
-              width: "310px",
-            }}
-          >
-            自分の日記をもっと見る
-          </Button>
+          <Button className="btn-main">自分の日記をもっと見る</Button>
         </Grid>
       </Grid>
     </Box>

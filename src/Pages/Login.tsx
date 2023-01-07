@@ -7,7 +7,8 @@ import { ROUTES } from "../routes";
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const onLogin = () => {
+  const onLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       localStorage.setItem("isAuthenticated", "true");
@@ -24,50 +25,37 @@ export default function Login() {
     >
       {loading && <LoadingSpinner />}
       <Box component="img" src="/Imagine/logo.png" alt="App Logo" />
-      <Stack spacing={3} width={{ xs: "100%", lg: "50%" }} mb={5}>
-        <TextField
-          label="Username"
-          id="username-input"
-          variant="standard"
-          required
-        />
-        <TextField
-          id="password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          variant="standard"
-          required
-        />
+      <Stack
+        width="50%"
+        component="form"
+        onSubmit={onLogin}
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+      >
+        <Stack spacing={3} width={{ xs: "100%", lg: "50%" }} mb={5}>
+          <TextField
+            label="Username"
+            id="username-input"
+            variant="standard"
+            required
+          />
+          <TextField
+            id="password-input"
+            label="Password"
+            type="password"
+            autoComplete="current-password"
+            variant="standard"
+            required
+          />
+        </Stack>
+        <Button className="btn-main" type="submit">
+          ログインする
+        </Button>
+        <Button className="btn-main" onClick={() => navigate(ROUTES.COLUMN)}>
+          コラム一覧
+        </Button>
       </Stack>
-      <Button
-        sx={{
-          background:
-            "linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)",
-          p: "4px 30px",
-          margin: "8px auto",
-          display: "block",
-          height: "56px",
-          width: "310px",
-        }}
-        onClick={onLogin}
-      >
-        ログインする
-      </Button>
-      <Button
-        sx={{
-          background:
-            "linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)",
-          p: "4px 30px",
-          margin: "8px auto",
-          display: "block",
-          height: "56px",
-          width: "310px",
-        }}
-        onClick={() => navigate(ROUTES.COLUMN)}
-      >
-        コラム一覧
-      </Button>
     </Stack>
   );
 }
