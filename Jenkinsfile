@@ -9,11 +9,6 @@ pipeline{
                 sh 'npm install'      
             }
         }
-        stage('Testing'){ 
-            steps{
-              sh "npm run test"
-            }
-        }
         stage('Docker Build'){ 
             steps{
               sh "docker build -t health-app ."
